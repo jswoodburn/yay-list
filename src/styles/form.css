@@ -73,3 +73,9 @@
     border-radius: 5px;
     border-color: lightgrey;
 }
+
+.progressBar {
+    display: flex;
+    align-self: center;
+}
+

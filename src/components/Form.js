@@ -1,16 +1,54 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import * as style from '../styles/form.css';
+
+const ProgressBar = (props) => {
+    const { isShowing, completed, setCompleted } = props;
+
+    useEffect(() => {
+        if (completed < 98) {
+            setInterval(() => (setCompleted(completed+2)), 20)
+        }
+    }, [completed]);
+
+    const containerStyles = {
+        marginTop: 30,
+        height: 20,
+        width: '100%',
+        backgroundColor: "#e0e0de",
+        borderRadius: 50,
+    }
+
+    const fillerStyles = {
+        height: '100%',
+        width: `${completed}%`,
+        backgroundColor: "#8f05ff",
+        borderRadius: 'inherit',
+        textAlign: 'right',
+        // transition: 'width 0.1s ease-in'
+    }
+
+    return isShowing && (
+        <div style={containerStyles}>
+            <div style={fillerStyles}></div>
+        </div>
+    );
+};
 
 const Form = (
     token
 ) => {
-
     const [sentence, setSentence] = useState('');
+    const [progressBarShowing, setProgressBarShowing] = useState(false);
+    const [percentageComplete, setPercentageComplete] = useState(0)
+
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(token);
+        setProgressBarShowing(true);
+        setPercentageComplete(2)
         alert(`Yay! Your auth token is ${token}}`);
     }
+
     return (
         <div className="page">
             <div className="titleBanner">
@@ -26,6 +64,7 @@ const Form = (
                         <input className="formTextField" type={'text'} name={'sentence'} value={sentence} onChange={e => setSentence(e.target.value)} />
                         <input className="formButton" type={'submit'} value={'Yay!'} />
                     </form>
+                    <ProgressBar className="progressBar" isShowing={progressBarShowing} completed={percentageComplete} setCompleted={setPercentageComplete}/>
                 </div>
             </div>
         </div>
