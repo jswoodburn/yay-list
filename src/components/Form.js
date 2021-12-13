@@ -1,12 +1,14 @@
-import React, {useParams, useState} from 'react';
+import React, {useState} from 'react';
 
-const Form = () => {
+const Form = (
+    token
+) => {
     const [sentence, setSetence] = useState('');
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert(`Yay! Making playlist for ${sentence}`);
+        console.log(token);
+        alert(`Yay! Your auth token is ${token}}`);
     }
-    const {code} = useParams();
     return (
         <div>
             <h1>Yay-List!</h1>
