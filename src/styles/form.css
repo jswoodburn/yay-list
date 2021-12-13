@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100&family=Racing+Sans+One&display=swap');
+
+.page {
+    display: flex;
+    flex-direction: column;
+}
+.body {
+    margin-top: 50px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.titleBanner {
+    background-color: #8f05ff;
+    padding: 20px;
+}
+
+.titleText {
+    padding-top: 30px;
+    padding-left: 30px;
+
+    color: white;
+    font-family: 'Racing Sans One', serif;
+    font-size: 50px;
+}
+
+.formBox {
+    padding: 50px;
+    padding-top: 18px;
+
+    border-width: 1.5px;
+    border-style: solid;
+    border-color: lightgrey;
+    border-radius: 5px;
+}
+
+.formTitle {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+}
+
+.formTitleText {
+    font-family: 'Barlow', sans-serif;
+    align-self: center;
+}
+
+.inlineYayList {
+    font-family: 'Racing Sans One', serif;
+    font-size: 30px;
+}
+
+.formField {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.formButton {
+    font-family: 'Racing Sans One', serif;
+    font-size: 20px;
+
+    border-radius: 5px;
+    border-color: lightgrey;
+}
+
+.formTextField {
+    font-size: 20px;
+
+    border-radius: 5px;
+    border-color: lightgrey;
+}
