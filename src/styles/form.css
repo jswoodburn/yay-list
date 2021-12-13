@@ -45,6 +45,7 @@
 .formTitleText {
     font-family: 'Barlow', sans-serif;
     align-self: center;
+    padding-right: 4px;
 }
 
 .inlineYayList {

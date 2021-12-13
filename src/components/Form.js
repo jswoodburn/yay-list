@@ -5,7 +5,7 @@ const Form = (
     token
 ) => {
 
-    const [sentence, setSetence] = useState('');
+    const [sentence, setSentence] = useState('');
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(token);
@@ -23,7 +23,7 @@ const Form = (
                         <h2 className="inlineYayList">Yay-List!</h2>
                     </div>
                     <form className="formField" onSubmit={handleSubmit}>
-                        <input className="formTextField" type={'text'} name={'sentence'} value={sentence} onChange={e => setSetence(e.target.value)} />
+                        <input className="formTextField" type={'text'} name={'sentence'} value={sentence} onChange={e => setSentence(e.target.value)} />
                         <input className="formButton" type={'submit'} value={'Yay!'} />
                     </form>
                 </div>
